@@ -1,4 +1,4 @@
-#Made by Aleksander Torka 4TIN
+
 import random
 
 def my_game():
