@@ -2,12 +2,10 @@ team_1 = int(input("First team: "))
 team_2 = int(input("Second team: "))
 when_meet = []
 def search(group):
-    when_meet = []
     if (team_1 in group and team_2 in group):
         when_meet.append(group)
-        print(when_meet)
 def result():
-    print("Your teams will meet in: ", )
+    print("Your teams will meet in: ",when_meet[-1] )
 def power():
     global teams
     global all_rounds
@@ -63,7 +61,7 @@ if (all_rounds >= 2):
             last_16_8 = quarter_final_4 [mid:]
             search(last_16_8)
 
-result(when_meet)
+result()
 
 
 
