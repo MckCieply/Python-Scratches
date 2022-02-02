@@ -1,11 +1,25 @@
+
 team_1 = int(input("First team: "))
 team_2 = int(input("Second team: "))
 when_meet = []
 def search(group):
     if (team_1 in group and team_2 in group):
-        when_meet.append(group)
+        global stage
+        stage = group
+        when_meet.append(stage)
 def result():
-    print("Your teams will meet in: ",when_meet[-1] )
+    if (teams == len(stage)):
+        print("Finals")
+        print("Teams numbers that can meet in Finals: ", when_meet[-1] )
+    elif((teams // 2) == len(stage)):
+        print ("Semifinals")
+        print("Teams numbers that can meet in Semifinals: ", when_meet[-1] )
+    elif((teams // 4) == len(stage)):
+        print ("Quarterfinals")
+        print("Teams numbers that can meet in Quarterfinals: ", when_meet[-1] )
+    elif((teams // 8) == len(stage)):
+        print ("Top 16")
+        print("Teams numbers that can meet in Top 16: ", when_meet[-1] )
 def power():
     global teams
     global all_rounds
@@ -21,7 +35,7 @@ print("Number of teams in tournament: ", teams )
 all_teams = []
 for i in range(0, teams):                      #Creating list with all teams competing
     all_teams.append(i)
-# print("Teams that can meet in finals(",all_rounds,"round ): \n", all_teams)
+search(all_teams)
 if (all_rounds >= 2):
     mid = len(all_teams) // 2
     semi_final_1 = all_teams [:mid]
