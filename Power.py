@@ -1,4 +1,4 @@
-
+#Another thing to work on is making groups easier and with less code
 team_1 = int(input("First team: "))
 team_2 = int(input("Second team: "))
 when_meet = []
@@ -31,6 +31,16 @@ def power():
         teams  *= basic
         k -= 1
 power()
+def how_long(long):
+    mid = len(all_teams) // 2
+    if 'semi_final' in long:
+        if (long % 1):
+            semi_final_1 = all_teams [:mid]
+
+        elif (long % 0):
+            semi_final_2 = all_teams [mid:]
+
+
 print("Number of teams in tournament: ", teams )
 all_teams = []
 for i in range(0, teams):                      #Creating list with all teams competing
