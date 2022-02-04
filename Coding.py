@@ -19,5 +19,6 @@ def replacing(coded_text, raw_text):
     again = input("Do you want to continue? (Y/N)")
     if again in yes:
         replacing(coded_text, raw_text)
-
+    if again in no:
+        exit()
 replacing(coded_text, raw_text)
