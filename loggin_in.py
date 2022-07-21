@@ -4,6 +4,7 @@ def sign_up():
     email = input("Please input your e-mail: ")
     password = input ("Please input your password: ")
     confirm_password = input("Input your password again: ")
+
     if password == confirm_password:
         enc = confirm_password.encode()
         hash1 = hashlib.md5(enc).hexdigest()
@@ -15,7 +16,15 @@ def sign_up():
     else:
         print("Your passwords are not matching!")
 
-def login():
+    cont = input("Do you want to log in now?[Y/N")
+    if cont in ["Y"]:
+        log_in()
+    elif cont in ["N"]:
+        print("Understandable, have a great day")
+    else:
+        print("You have no idea whats happening around you do you")
+
+def log_in():
     email = input("Please input your e-mail: ")
     password = input ("Please input your password: ")
 
@@ -29,6 +38,19 @@ def login():
         print("Login failed! \n")
 
 
-sign_up()
-login()
+def selection():
+    print("""
+    Welcome! Please select whether you are already one of our users
+    or you are new around here...
+    Type 1 to sign-in
+    Type 2 to Log-in
+     """)
+    choose = input("-->")
+    if choose in ["1"]:
+        sign_up()
+    elif choose in ["2"]:
+        log_in()
+    else: 
+        print("Seems like you dont really get it")
     
+selection()
