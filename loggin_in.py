@@ -1,4 +1,5 @@
 import hashlib
+import time
 
 def sign_up():
     email = input("Please input your e-mail: ")
@@ -16,7 +17,27 @@ def sign_up():
     else:
         print("Your passwords are not matching!")
 
-    cont = input("Do you want to log in now?[Y/N")
+    def your_data():
+        print("Please input your data: ")
+        first_name = input("First name: ")
+        last_name = input("Last name: ")
+        login = input("Login of your choosing:")
+        country = input("Your country: ")
+        with open("data.txt","w") as f:
+            f.write(f"{first_name}\n{last_name}\n{email}\n{login}\n{country}")              #Print out a data after log-on and say hello {name} after login
+        print(f"{first_name}\n{last_name}\n{email}\n{login}\n{country}")
+    
+    update = input("Do you want to provide more data about you?[Y/N]: ")
+    if update in ["Y"]:
+        print("Alright then, hold up a second")
+        time.sleep(5)
+        your_data()
+    elif update in ["N"]:
+        pass
+    else: 
+        print("Something is wrong with you I can feel it")
+
+    cont = input("Do you want to log in now?[Y/N]")
     if cont in ["Y"]:
         log_in()
     elif cont in ["N"]:
@@ -45,7 +66,7 @@ def selection():
     Type 1 to sign-in
     Type 2 to Log-in
      """)
-    choose = input("-->")
+    choose = input("--> ")
     if choose in ["1"]:
         sign_up()
     elif choose in ["2"]:
