@@ -55,22 +55,22 @@ while True:
                 change_to = "LEFT"
             if event.key == pygame.K_RIGHT:
                 change_to = "RIGHT"
-    if change_to == "UP" and direction != "DOWN":
-        direction = "UP"    
-    if change_to == "DOWN" and direction != "UP":
-        direction = "DOWN"
-    if change_to == "LEFT" and direction != "RIGHT":
-        direction = "LEFT"
-    if change_to == "RIGHT" and direction != "LEFT":
-        direction = "RIGHT"
+    if change_to == "UP" and s_direction != "DOWN":
+        s_direction = "UP"    
+    if change_to == "DOWN" and s_direction != "UP":
+        s_direction = "DOWN"
+    if change_to == "LEFT" and s_direction != "RIGHT":
+        s_direction = "LEFT"
+    if change_to == "RIGHT" and s_direction != "LEFT":
+        s_direction = "RIGHT"
 
-    if direction == "UP":
+    if s_direction == "UP":
         s_position[1] -= 10
-    if direction == "DOWN":
+    if s_direction == "DOWN":
         s_position[1] += 10
-    if direction == "LEFT":
+    if s_direction == "LEFT":
         s_position[0] -= 10
-    if direction == "RIGHT":
+    if s_direction == "RIGHT":
         s_position[0] += 10
 
     s_body.insert(0, list(s_position))
