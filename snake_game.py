@@ -72,3 +72,31 @@ while True:
         s_position[0] -= 10
     if direction == "RIGHT":
         s_position[0] += 10
+
+    s_body.insert(0, list(s_position))
+    if s_position[0] == f_position[0] and s_position[1] == f_position[1]:
+        score += 10
+        f_spawn = False
+    else:
+        s_body.pop()
+    if not f_spawn:
+        f_position = [random.randrange(1, (window_x//10))* 10, random.randrange(1, (window_y//10))* 10]
+    f_spawn = True
+    window.fill(black)
+
+    for pos in s_body:
+        pygame.draw.rect(window, green, pygame.Rect(pos[0], pos[1], 10, 10))
+
+    pygame.draw.rect(window, white, pygame.Rect(f_position[0], f_position[1], 10, 10))
+
+    if s_position[0] < 0 or s_position[0] > window_x - 10:
+        game_over()
+    if s_position[1] < 0 or s_position[1] > window_y - 10:
+        game_over()
+    for block in s_body[1:]:
+        if s_position[0] == block[0] and s_position[1] == block[1]:
+            game_over()
+    show_score(1, white, 'times new roman', 20)
+
+    pygame.display.update()
+    fps.tick(s_speed)
