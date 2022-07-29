@@ -44,4 +44,31 @@ def game_over():
     pygame.quit()
     quit()
 
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+                change_to = "UP"
+            if event.key == pygame.K_DOWN:
+                change_to = "DOWN"
+            if event.key == pygame.K_LEFT:
+                change_to = "LEFT"
+            if event.key == pygame.K_RIGHT:
+                change_to = "RIGHT"
+    if change_to == "UP" and direction != "DOWN":
+        direction = "UP"    
+    if change_to == "DOWN" and direction != "UP":
+        direction = "DOWN"
+    if change_to == "LEFT" and direction != "RIGHT":
+        direction = "LEFT"
+    if change_to == "RIGHT" and direction != "LEFT":
+        direction = "RIGHT"
 
+    if direction == "UP":
+        s_position[1] -= 10
+    if direction == "DOWN":
+        s_position[1] += 10
+    if direction == "LEFT":
+        s_position[0] -= 10
+    if direction == "RIGHT":
+        s_position[0] += 10
