@@ -1,7 +1,7 @@
 from tkinter import *
+from OOP2_cell import Cell
 import OOP2_settings as settings
 import OOP2_utils as utils
-
 root = Tk()
 # root.configure(bg = "lightgray")
 root.geometry(f'{settings.WIDTH}x{settings.HEIGHT}')
@@ -46,4 +46,6 @@ def framing():
     right_frame.place(x=1152, y=0)
     main_frame.place(x=utils.width_prct(20), y=utils.height_prct(20))
 framing()
+
+c1 = Cell()
 root.mainloop()
