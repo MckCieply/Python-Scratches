@@ -1,12 +1,12 @@
 
 formula = "How much do you like "
-question_list = []
 class Question():
+    counter = 0
     def __init__ (self, destination, description):
         self.destination = destination
         self.description = description 
+        Question.counter +=1
 
-question_list = []
 
 q_1 = Question("Lake",f"{formula} fishing? ")
 q_2 = Question("Lake",f"{formula} sailing? ")
@@ -17,3 +17,6 @@ q_6 = Question("Sea", f"{formula} collecting shells? ")
 q_7 = Question("Mountains",f"{formula} hiking? ")
 q_8 = Question("Mountains", "Whether you prefer passive(1) or active(5) recreaction? ")
 q_9 = Question("Mountains", "How much do you admire sights? ")
+
+
+print(Question.counter)
