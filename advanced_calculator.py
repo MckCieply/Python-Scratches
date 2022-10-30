@@ -27,13 +27,16 @@ def numbers_input():
         try:
             number = float(number)
             numbers_list.append(number)
+            time.sleep(0.2)
         except:  
             wrong_counter +=1
             if wrong_counter > 3:
                 print("You gave wrong input too many times, shutting down.")
+                time.sleep(1)
                 break
             else:
                  print("Wrong value, not a number, please try again.")
+                 time.sleep(0.5)
     corresponding_calculator(choice)
     
 def corresponding_calculator(choice):
@@ -41,9 +44,9 @@ def corresponding_calculator(choice):
         print("Calculating median now.. ")
         time.sleep(1)
         calculate_median(numbers_list)
+
 def calculate_median(numbers_list):
     numbers_list.sort()
-    max, min = None, None
     lenght = int(len(numbers_list))
     if lenght%2 == 0:
         median = (numbers_list[lenght//2] + numbers_list[lenght//2 - 1]) / 2
@@ -52,4 +55,6 @@ def calculate_median(numbers_list):
         median = numbers_list[lenght//2 - 1]
         median = int(median)
         print(f"Median from imputed values is equal to {median}.")
+        
+
 menu()
