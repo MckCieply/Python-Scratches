@@ -42,8 +42,14 @@ def corresponding_calculator(choice):
         time.sleep(1)
         calculate_median(numbers_list)
 def calculate_median(numbers_list):
+    numbers_list.sort()
     max, min = None, None
-    for number in numbers_list:
-        print(number)
-
+    lenght = int(len(numbers_list))
+    if lenght%2 == 0:
+        median = (numbers_list[lenght//2] + numbers_list[lenght//2 - 1]) / 2
+        print(f"Median from imputed values is equal to {median}.")
+    elif lenght%2 == 1:
+        median = numbers_list[lenght//2 - 1]
+        median = int(median)
+        print(f"Median from imputed values is equal to {median}.")
 menu()
