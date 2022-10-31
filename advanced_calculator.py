@@ -5,6 +5,7 @@ def menu():
           WELCOME IN ADVANCED CALCULATOR
           PLEASE CHOOSE WHAT WOULD YOU LIKE TO CALCULATE:
           1) MEDIAN
+          2) AVERAGE
           """)
     global choice
     choice = input("Pass a coresponding number: ")
@@ -18,7 +19,7 @@ def numbers_input():
     print("Please input your numbers one at the time: ")
     time.sleep(0.5)
     while is_true is True:
-        number = input("-->")
+        number = input("--> ")
         if number == "":
             is_true = False
             print("Finishing collecting data..")
@@ -45,16 +46,28 @@ def corresponding_calculator(choice):
         time.sleep(1)
         calculate_median(numbers_list)
 
+    if choice == "2":
+        print("Calculating average.. ")
+        time.sleep(1)
+        calculate_average(numbers_list)
+
 def calculate_median(numbers_list):
     numbers_list.sort()
-    lenght = int(len(numbers_list))
+    lenght = len(numbers_list)
     if lenght%2 == 0:
         median = (numbers_list[lenght//2] + numbers_list[lenght//2 - 1]) / 2
-        print(f"Median from imputed values is equal to {median}.")
+        print(f"\nMedian from imputed values is equal to {median}.")
     elif lenght%2 == 1:
         median = numbers_list[lenght//2 - 1]
-        median = int(median)
-        print(f"Median from imputed values is equal to {median}.")
+        print(f"\nMedian from imputed values is equal to {median}.")
         
+def calculate_average(numbers_list):
+    lenght = (len(numbers_list))
+    total = 0
+    for element in numbers_list:
+        total += element
+    total /= lenght
+    print(f"\nAverage from imputed values is {round(total,2)}.")
+
 
 menu()
