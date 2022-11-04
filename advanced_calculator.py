@@ -6,6 +6,7 @@ def menu():
           PLEASE CHOOSE WHAT WOULD YOU LIKE TO CALCULATE:
           1) MEDIAN
           2) AVERAGE
+          3) SUM
           """)
     global choice
     choice = input("Pass a coresponding number: ")
@@ -50,6 +51,11 @@ def corresponding_calculator(choice):
         print("Calculating average.. ")
         time.sleep(1)
         calculate_average(numbers_list)
+        
+    if choice == "3":
+        print("Calculating sum.. ")
+        time.sleep(1)
+        calculate_sum(numbers_list)
 
 def calculate_median(numbers_list):
     numbers_list.sort()
@@ -64,10 +70,15 @@ def calculate_median(numbers_list):
 def calculate_average(numbers_list):
     lenght = (len(numbers_list))
     total = 0
-    for element in numbers_list:
-        total += element
+    for number in numbers_list:
+        total += number
     total /= lenght
     print(f"\nAverage from imputed values is {round(total,2)}.")
 
+def calculate_sum(numbers_list):
+    sum = 0
+    for number in numbers_list:
+        sum += number
+    print(f'Sum of imputed values is equal to: {sum}.')
 
 menu()
