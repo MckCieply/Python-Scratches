@@ -2,20 +2,27 @@
 #think box is the best
 import numpy as np
 import matplotlib.pyplot as plt
+
+measurments = ["Bez obciążników", "Z obciążnikami \nna końcach", "Z obciążnikami \njak najbliżej \nśrodka"]
+xax = np.arange(len(measurments))+1
 #2 periods of vibration each
 #Rod 1
 rod_1 = np.array([[1.65, 1.57, 1.55, 1.65, 1.62],       #w/o weights
                   [3.60, 3.68, 3.60, 3.69, 3.54],       #wide weights
                   [1.84, 1.81, 1.85, 1.81, 1.78]])      #central weights
 rod_1 /= 2
+rod_1_avg = [round(np.average(row),3) for row in rod_1]
 #Rod 2
 rod_2 = np.array([[1.20, 1.22, 1.22, 1.23, 1.32],       #w/o weights
                   [2.68, 2.64, 2.50, 2.73, 2.79],       #wide weights
                   [2.68, 2.64, 2.50, 2.73, 2.79]])      #central weights
 rod_2 /= 2
+rod_2_avg = [round(np.average(row),3) for row in rod_2]
+plt.bar(xax - 0.2 ,rod_1_avg, 0.4)
+plt.bar(xax + 0.2 ,rod_2_avg, 0.4)
+plt.xticks(xax, measurments)
 
-fig, ax = plt.subplots()
-plot = ax.boxplot(rod_1)
+
 
 plt.show()
 
