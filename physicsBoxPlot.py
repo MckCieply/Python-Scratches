@@ -14,7 +14,7 @@ rod_1 /= 2
 rod_1_avg = [round(np.average(row),3) for row in rod_1]
 #Rod 2
 rod_2 = np.array([[1.20, 1.22, 1.22, 1.23, 1.32],       #w/o weights
-                  [2.68, 2.64, 2.50, 2.73, 2.79],       #central weights //tofix
+                  [1.38, 1.34, 1.38, 1.34, 1.29],       #central weights
                   [2.68, 2.64, 2.50, 2.73, 2.79]])      #wide weights
 rod_2 /= 2
 rod_2_avg = [round(np.average(row),3) for row in rod_2]
