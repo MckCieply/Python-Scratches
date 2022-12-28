@@ -27,5 +27,9 @@ plt.ylabel("[t]")
 plt.grid(linestyle="--", color="gray")
 
 
-plt.show()
+#plt.show()
+x = np.average(rod_2[2])
+print(rod_2[2], "\n", x)
+
+
 
