@@ -14,18 +14,22 @@ rod_1 /= 2
 rod_1_avg = [round(np.average(row),3) for row in rod_1]
 #Rod 2
 rod_2 = np.array([[1.20, 1.22, 1.22, 1.23, 1.32],       #w/o weights
-                  [2.68, 2.64, 2.50, 2.73, 2.79],       #central weights //tofix
+                  [1.38, 1.34, 1.38, 1.34, 1.29],       #central weights
                   [2.68, 2.64, 2.50, 2.73, 2.79]])      #wide weights
 rod_2 /= 2
 rod_2_avg = [round(np.average(row),3) for row in rod_2]
-plt.bar(xax - 0.2 ,rod_1_avg, 0.4, label="Pręt 1")
-plt.bar(xax + 0.2 ,rod_2_avg, 0.4, label="Pręt 2")
+plt.bar(xax - 0.2 ,rod_1_avg, 0.3, label="Pręt 1", color="red")
+plt.bar(xax + 0.2 ,rod_2_avg, 0.3, label="Pręt 2", color="green")
 plt.xticks(xax, measurments)
 plt.title("Średni czas pomiaru jednego okresu")
 plt.legend()
 plt.ylabel("[t]")
-plt.grid()
+plt.grid(linestyle="--", color="gray")
 
 
-plt.show()
+#plt.show()
+x = np.average(rod_2[2])
+print(rod_2[2], "\n", x)
+
+
 
