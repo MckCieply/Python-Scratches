@@ -86,6 +86,7 @@ def calculate_sum(numbers_list):
         sum += number
     print(f'Sum of imputed values is equal to: {sum}.')
 
-def calculate_diff():
-    pass
+def calculate_diff(numbers_list):
+    result = max(numbers_list) - min(numbers_list)
+    print(f"Diffrence between biggest and smallest number passed is: {result}")
 menu()
