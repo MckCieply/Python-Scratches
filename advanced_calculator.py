@@ -7,7 +7,7 @@ def menu():
           1) MEDIAN
           2) AVERAGE
           3) SUM
-          4) DIFFRENCE
+          4) DIFFRENCE BETWEEN MAX 'N' MIN
           """)
     global choice
     choice = input("Pass a coresponding number: ")
