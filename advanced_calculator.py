@@ -7,6 +7,7 @@ def menu():
           1) MEDIAN
           2) AVERAGE
           3) SUM
+          4) DIFFRENCE
           """)
     global choice
     choice = input("Pass a coresponding number: ")
@@ -57,6 +58,10 @@ def corresponding_calculator(choice):
         time.sleep(1)
         calculate_sum(numbers_list)
 
+    if choice == "4":
+        print("Calculating diffrence.. ")
+        calculate_diff(numbers_list)
+
 def calculate_median(numbers_list):
     numbers_list.sort()
     lenght = len(numbers_list)
@@ -81,4 +86,6 @@ def calculate_sum(numbers_list):
         sum += number
     print(f'Sum of imputed values is equal to: {sum}.')
 
+def calculate_diff():
+    pass
 menu()
