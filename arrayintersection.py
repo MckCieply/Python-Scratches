@@ -6,12 +6,13 @@ def arraysearch(num1, num2):
     if(len(num1) < len(num2)):
         for num in num1:
             if num in num2:
-                if num not in results:
-                    results.append(num)
+                results.append(num)
+                num2.remove(num)
     else:
         for num in num2:
             if num in num1:
                 if num not in results:
                     results.append(num)
+                    num1.remove(num)
     
     return results
