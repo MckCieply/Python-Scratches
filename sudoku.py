@@ -1,7 +1,7 @@
 board = [["8","3",".",".","7",".",".",".","."]
         ,["6",".",".","1","9","5",".",".","."]
         ,[".","9","8",".",".",".",".","6","."]
-        ,["8",".",".",".","6",".",".",".","3"]
+        ,["9",".",".",".","6",".",".",".","3"]
         ,["4",".",".","8",".","3",".",".","1"]
         ,["7",".",".",".","2",".",".",".","6"]
         ,[".","6",".",".",".",".","2","8","."]
@@ -21,5 +21,19 @@ def checkboard(board):
             else:
                 valid = False
     
-    
+    #checking verticaly if valid
+    for i in range(9):
+        avalible = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        numbers = []
+        for j in range(9):
+            element = board[j][i]
+            if element in avalible:
+                avalible.remove(element)
+            elif element == ".":
+                pass
+            else:
+                valid = False
+        print(valid)
+
+            
 checkboard(board)
