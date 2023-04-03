@@ -8,6 +8,8 @@ def reverse(x):
         
     x = int(string)
     
+    if x >= 2**31 - 1 or x <= -2**31:
+        return 0
     
     
 reverse(-123)
