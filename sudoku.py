@@ -1,4 +1,4 @@
-board = [["8","3",".",".","7",".",".",".","."]
+board = [["5","3",".",".","7",".",".",".","."]
         ,["6",".",".","1","9","5",".",".","."]
         ,[".","9","8",".",".",".",".","6","."]
         ,["9",".",".",".","6",".",".",".","3"]
@@ -20,6 +20,7 @@ def checkboard(board):
                 pass
             else:
                 valid = False
+                break
     
     #checking verticaly if valid
     for i in range(9):
@@ -33,7 +34,23 @@ def checkboard(board):
                 pass
             else:
                 valid = False
-        print(valid)
-
+                break
+    #checking 3x3 squares
+    for i in range(2,9,3):
+        for j in range(2,9,3):
+            avalible = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+            for x in range(0,3):
+                for y in range(0,3):
+                    element = board[j-y][i-x]
+                    if element in avalible:
+                        avalible.remove(element)
+                    elif element == ".":
+                        pass
+                    else:
+                        valid = False
+                        break
+                    
+    return valid
+            
             
 checkboard(board)
