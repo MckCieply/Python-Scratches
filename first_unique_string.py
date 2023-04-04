@@ -1,6 +1,6 @@
 def firstUniqChar(s):
     for i, letter in enumerate(s):
-        if letter not in s[i+1:]:
+        if letter not in s[:i-1] and letter not in s[i+1:]:
             return i
         
     return -1
